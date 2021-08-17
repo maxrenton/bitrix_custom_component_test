@@ -46,7 +46,6 @@ class CatalogComponent extends CBitrixComponent {
             return;
         }
 
-        // TODO: добавить параметры кэширования и пагинации
         if($this->startResultCache(false, $arNavigation)) {
             $this->arResult['ELEMENTS_ON_PAGE'] = $this->arParams['ELEMENTS_ON_PAGE'];
 
