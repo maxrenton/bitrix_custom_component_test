@@ -9,7 +9,7 @@ $APPLICATION->SetTitle("Shop");
 	"test:catalogue.element", 
 	".default", 
 	array(
-		"ELEMENTS_ON_PAGE" => "8",
+		"ELEMENTS_ON_PAGE" => "2",
 		"IBLOCK_ID" => "2",
 		"IBLOCK_TYPE" => "catalog",
 		"COMPONENT_TEMPLATE" => ".default",

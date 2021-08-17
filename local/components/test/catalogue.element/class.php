@@ -35,10 +35,6 @@ class CatalogComponent extends CBitrixComponent {
 
     public function executeComponent()
     {
-        global $APPLICATION;
-        $this->arResultCacheKeys = ['NAME'];
-        $APPLICATION->SetPageProperty('main_block_class', 'mainCatalog container');
-
         $arNavParams = ["nPageSize" => $this->arParams['ELEMENTS_ON_PAGE']];
         $arNavigation = CDBResult::GetNavParams($arNavParams);
 
@@ -70,7 +66,7 @@ class CatalogComponent extends CBitrixComponent {
             $this->arResult['PRODUCT'] = [];
 
             $rsQuery = CIBlockElement::GetList($sort, $filter, false, $arNavParams, $arSelect);
-            $count = 0;
+
             while ($ar = $rsQuery->Fetch()) {
                 $ar['DETAIL_PICTURE'] = $ar['DETAIL_PICTURE'] ? CFile::GetPath($ar['DETAIL_PICTURE']) : '';
                 $this->arResult['PRODUCT'][] = $ar;
